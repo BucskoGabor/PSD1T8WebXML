@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index - Kurzusok</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .menu-item {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-item:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content img {
+            max-width: 300px;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .back-link img {
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .back-link img:hover {
+            transform: scale(1.05);
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="kezdolap.html" class="back-link">
+            <img src="https://geik.uni-miskolc.hu/intezetek/FEI/content/160/160_5.png" alt="Kezdőlap kép" title="Kattints a képre a kezdőlapra">
+        </a>
+        <h1>Kurzusaim</h1>
+        
+        <div class="menu">
+            <a href="unix.html" class="menu-item">Unix Rendszergazda</a>
+            <a href="webtech1.html" class="menu-item">Web technológiák 1</a>
+            <a href="webxml.html" class="menu-item">Webes adatkezelő környezetek</a>
+        </div>
+        
+        <div class="content">
+            <h2>Üdvözöllek az index oldalon!</h2>
+            <p>Válassz egy kurzust a fenti menüből a részletes tematika megtekintéséhez.</p>            
+        </div>
+        
+        <div class="footer">
+            <p>Hallgató neve: Bucskó Gábor</p>
+            <p>Neptunkód: PSD1T8</p>
+            <p>2025</p>
+        </div>
+    </div>
+</body>
+</html>
