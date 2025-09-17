@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Órarend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .eloadas {
+            background-color: #e8f5e8;
+        }
+        
+        .gyakorlat {
+            background-color: #fff3e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Órarend - Mérnökinformatikus Szak</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tantárgy</th>
+                <th>Típus</th>
+                <th>Nap</th>
+                <th>Időpont</th>
+                <th>Helyszín</th>
+                <th>Oktató</th>
+                <th>Szak</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="eloadas">
+                <td>1</td>
+                <td class="targy">Elektro</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Hétfő</td>
+                <td class="idopont">08:00 - 10:00</td>
+                <td class="helyszin">III. ea</td>
+                <td class="oktato">Szabó Norbert István</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="eloadas">
+                <td>2</td>
+                <td class="targy">Webtech</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Hétfő</td>
+                <td class="idopont">10:00 - 12:00</td>
+                <td class="helyszin">V. ea</td>
+                <td class="oktato">Agárdi Anita</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>3</td>
+                <td class="targy">Webtech</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Hétfő</td>
+                <td class="idopont">14:00 - 16:00</td>
+                <td class="helyszin">In/101</td>
+                <td class="oktato">Agárdi Anita</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="eloadas">
+                <td>4</td>
+                <td class="targy">Mobil programozás</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Hétfő</td>
+                <td class="idopont">16:00 - 18:00</td>
+                <td class="helyszin">In/101</td>
+                <td class="oktato">Agárdi Anita</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>5</td>
+                <td class="targy">Mobil programozás</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Hétfő</td>
+                <td class="idopont">18:00 - 20:00</td>
+                <td class="helyszin">In/101</td>
+                <td class="oktato">Agárdi Anita</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="eloadas">
+                <td>6</td>
+                <td class="targy">Mesterséges Intelligencia</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Kedd</td>
+                <td class="idopont">10:00 - 12:00</td>
+                <td class="helyszin">XXXII. ea</td>
+                <td class="oktato">Kunné Tamás Judit</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>7</td>
+                <td class="targy">Mesterséges Intelligencia</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Kedd</td>
+                <td class="idopont">12:00 - 14:00</td>
+                <td class="helyszin">XXXII. ea</td>
+                <td class="oktato">Fazekas Levente Áron</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>8</td>
+                <td class="targy">Elektro</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Kedd</td>
+                <td class="idopont">14:00 - 16:00</td>
+                <td class="helyszin">A1/317</td>
+                <td class="oktato">Kozsely Gábor</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>9</td>
+                <td class="targy">UNIX rendszergazda</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Kedd</td>
+                <td class="idopont">17:00 - 19:00</td>
+                <td class="helyszin">In/101</td>
+                <td class="oktato">Baksa Attila</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="eloadas">
+                <td>10</td>
+                <td class="targy">UNIX rendszergazda</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Szerda</td>
+                <td class="idopont">08:00 - 10:00</td>
+                <td class="helyszin">In/103</td>
+                <td class="oktato">Baksa Attila</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="eloadas">
+                <td>11</td>
+                <td class="targy">XML</td>
+                <td><span class="tipus tipus-eloadas">Előadás</span></td>
+                <td>Szerda</td>
+                <td class="idopont">08:00 - 10:00</td>
+                <td class="helyszin">In/102</td>
+                <td class="oktato">Kovács László</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>12</td>
+                <td class="targy">XML</td>
+                <td><span class="tipus tipus-gyakorlat">Gyakorlat</span></td>
+                <td>Szerda</td>
+                <td class="idopont">10:00 - 12:00</td>
+                <td class="helyszin">In/101</td>
+                <td class="oktato">Bednarik László</td>
+                <td class="szak">Mérnökinformatikus</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
