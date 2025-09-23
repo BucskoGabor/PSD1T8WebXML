@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<konferencia>
+    <cím>Webes Technológiák</cím>
+    <előadó>
+        <név>Dr. Kovács István</név>
+        <adószám>12345678901</adószám>
+        <lakcím>Miskolc, Kossuth út 123.</lakcím>
+    </előadó>
+    <dátum>2025.10.15</dátum>
+    <helyszín> Miskolci Egyetem, A/1 épület</helyszín>
+    <hallgatók>
+        <hallgató>
+            <név>Nagy Anna</név>
+            <lakcím>Szeged, Kossuth Lajos sugárút 45.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Horváth Péter</név>
+            <lakcím>Debrecen, Piac utca 12.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Szabó Magdolna</név>
+            <lakcím>Győr, Baross Gábor út 67.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Tóth Máté</név>
+            <lakcím>Pécs, Rákóczi út 34.</lakcím>
+        </hallgató>
+        <hallgató>
+            <név>Varga János</név>
+            <lakcím>Miskolc, Szentpáli utca 8.</lakcím>
+        </hallgató>
+    </hallgatók>
+</konferencia>
