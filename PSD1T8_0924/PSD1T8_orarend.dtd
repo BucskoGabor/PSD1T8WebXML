@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT PSD1T8_orarend (ora*)>
+
+<!ELEMENT ora (targy, idopont, helyszin, oktato, szak)>
+<!ATTLIST ora id CDATA #REQUIRED>
+<!ATTLIST ora tipus (eloadas | gyakorlat | labor) "eloadas">
+
+<!ELEMENT targy (#PCDATA)>
+
+<!ELEMENT idopont (nap, tol, ig)>
+<!ELEMENT nap (#PCDATA)>
+<!ELEMENT tol (#PCDATA)>
+<!ELEMENT ig (#PCDATA)>
+
+<!ELEMENT helyszin (#PCDATA)>
+
+<!ELEMENT oktato (#PCDATA)>
+
+<!ELEMENT szak (#PCDATA)>
