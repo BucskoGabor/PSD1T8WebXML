@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PSD1T8_kurzusfelvetel SYSTEM "PSD1T8_kurzusfelvetel.dtd">
+<PSD1T8_kurzusfelvetel tanév="2025/26" egyetem="PPKE BTK">
+    <hallgato>
+        <hnev>Bucskó Gábor</hnev>
+        <szulev>2004</szulev>
+        <szak evf="3">Mérnökinformatikus</szak>
+    </hallgato>
+    <kurzusok>
+        <kurzus id="PSD1T8_1">
+            <kurzusnev>Elektro</kurzusnev>
+            <kredit>5</kredit>
+            <hely>III. ea</hely>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>0800</tol>
+                <ig>1000</ig>
+            </idopont>
+            <oktato>Szabó Norbert István</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_2" jovahagyas="nem" nyelv="magyar">
+            <kurzusnev>Webtech</kurzusnev>
+            <kredit>5</kredit>
+            <hely>V. ea</hely>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>1000</tol>
+                <ig>1200</ig>
+            </idopont>
+            <oktato>Agárdi Anita</oktato>
+            <oraado>Kovács Péter</oraado>
+        </kurzus>
+        <kurzus id="PSD1T8_3">
+            <kurzusnev>Webtech gyakorlat</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/101</hely>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>1400</tol>
+                <ig>1600</ig>
+            </idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_4" jovahagyas="nem" nyelv="magyar">
+            <kurzusnev>Mobil programozás</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/101</hely>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>1600</tol>
+                <ig>1800</ig>
+            </idopont>
+            <oktato>Agárdi Anita</oktato>
+            <oraado>Nagy Anna</oraado>
+        </kurzus>
+        <kurzus id="PSD1T8_5">
+            <kurzusnev>Mobil programozás gyakorlat</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/101</hely>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>1800</tol>
+                <ig>2000</ig>
+            </idopont>
+            <oktato>Agárdi Anita</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_6">
+            <kurzusnev>Mesterséges Intelligencia</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. ea</hely>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>1000</tol>
+                <ig>1200</ig>
+            </idopont>
+            <oktato>Kunné Tamás Judit</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_7">
+            <kurzusnev>Mesterséges Intelligencia gyakorlat</kurzusnev>
+            <kredit>5</kredit>
+            <hely>XXXII. ea</hely>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>1200</tol>
+                <ig>1400</ig>
+            </idopont>
+            <oktato>Fazekas Levente Áron</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_8">
+            <kurzusnev>Elektro gyakorlat</kurzusnev>
+            <kredit>5</kredit>
+            <hely>A1/317</hely>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>1400</tol>
+                <ig>1600</ig>
+            </idopont>
+            <oktato>Kozsely Gábor</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_9">
+            <kurzusnev>UNIX rendszergazda</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/101</hely>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>1700</tol>
+                <ig>1900</ig>
+            </idopont>
+            <oktato>Baksa Attila</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_10">
+            <kurzusnev>UNIX rendszergazda előadás</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/103</hely>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>0800</tol>
+                <ig>1000</ig>
+            </idopont>
+            <oktato>Baksa Attila</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_11">
+            <kurzusnev>XML</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/102</hely>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>0800</tol>
+                <ig>1000</ig>
+            </idopont>
+            <oktato>Kovács László</oktato>
+        </kurzus>
+        <kurzus id="PSD1T8_12">
+            <kurzusnev>XML gyakorlat</kurzusnev>
+            <kredit>5</kredit>
+            <hely>In/101</hely>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>1000</tol>
+                <ig>1200</ig>
+            </idopont>
+            <oktato>Bednarik László</oktato>
+        </kurzus>
+    </kurzusok>
+</PSD1T8_kurzusfelvetel>
