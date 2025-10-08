@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Saját típusok definiálása -->
+    <xs:simpleType name="napTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Hétfő"/>
+            <xs:enumeration value="Kedd"/>
+            <xs:enumeration value="Szerda"/>
+            <xs:enumeration value="Csütörtök"/>
+            <xs:enumeration value="Péntek"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="oraTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="eloadas"/>
+            <xs:enumeration value="gyakorlat"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idopontTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idTipus">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+    
+    <!-- Komplex típusok definiálása -->
+    <xs:complexType name="idopontType">
+        <xs:sequence>
+            <xs:element name="nap" type="napTipus"/>
+            <xs:element name="tol" type="idopontTipus"/>
+            <xs:element name="ig" type="idopontTipus"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="oraType">
+        <xs:sequence>
+            <xs:element name="targy" type="xs:string"/>
+            <xs:element name="idopont" type="idopontType"/>
+            <xs:element name="helyszin" type="xs:string"/>
+            <xs:element name="oktato" type="xs:string"/>
+            <xs:element name="szak" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="idTipus" use="required"/>
+        <xs:attribute name="tipus" type="oraTipus" use="required"/>
+    </xs:complexType>
+    
+    <!-- Gyökér elem definiálása -->
+    <xs:element name="PSD1T8_orarend">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ora" type="oraType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
