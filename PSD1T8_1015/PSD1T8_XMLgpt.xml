@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vendeglatas>
+  <!-- ===== TÖRZSADATOK ===== -->
+  <etteremLista>
+    <etterem id="E001">
+      <nev>Napfény Bisztró</nev>
+      <cim>
+        <varos>Budapest</varos>
+        <utca>Kossuth Lajos utca</utca>
+        <hazszam>12</hazszam>
+      </cim>
+
+      <!-- Kapcsolatok / hivatkozások -->
+      <foszakacs ref="F100"/>
+      <szakacsok>
+        <szakacsRef ref="S201"/>
+        <szakacsRef ref="S202"/>
+      </szakacsok>
+      <gyakornokok>
+        <gyakornokRef ref="GY301"/>
+      </gyakornokok>
+      <vendegek>
+        <vendegRef ref="V901"/>
+        <vendegRef ref="V902"/>
+      </vendegek>
+    </etterem>
+  </etteremLista>
+
+  <foszakacsLista>
+    <foszakacs id="F100">
+      <nev>Kovács Zoltán</nev>
+      <eletkor>45</eletkor>
+      <vegzettseg>Mesterszakács</vegzettseg>
+    </foszakacs>
+  </foszakacsLista>
+
+  <szakacsLista>
+    <szakacs id="S201">
+      <nev>Nagy Anna</nev>
+      <reszleg>Melegkonyha</reszleg>
+      <vegzettseg>Szakács OKJ</vegzettseg>
+    </szakacs>
+    <szakacs id="S202">
+      <nev>Tóth Péter</nev>
+      <reszleg>Cukrászat</reszleg>
+      <vegzettseg>Cukrász</vegzettseg>
+    </szakacs>
+  </szakacsLista>
+
+  <gyakornokLista>
+    <gyakornok id="GY301">
+      <nev>Szabó Lili</nev>
+      <gyakorlat>6 hónap</gyakorlat>
+      <muszak>Délután</muszak>
+      <kezdete>2025-06-01</kezdete>
+      <idotartam>90 nap</idotartam>
+    </gyakornok>
+  </gyakornokLista>
+
+  <vendegLista>
+    <vendeg id="V901">
+      <nev>Kiss Tamás</nev>
+      <eletkor>33</eletkor>
+      <cim>
+        <varos>Budapest</varos>
+        <utca>Fő utca</utca>
+        <hazszam>5</hazszam>
+      </cim>
+    </vendeg>
+    <vendeg id="V902">
+      <nev>Horváth Júlia</nev>
+      <eletkor>28</eletkor>
+      <cim>
+        <varos>Budapest</varos>
+        <utca>Petőfi utca</utca>
+        <hazszam>21</hazszam>
+      </cim>
+    </vendeg>
+  </vendegLista>
+
+  <!-- ===== ÜGYLET / RENDELÉS ===== -->
+  <rendelesLista>
+    <rendeles id="R0001">
+      <etteremRef ref="E001"/>
+      <vendegRef ref="V901"/>
+      <etelek>
+        <etel>
+          <nev>Marhapörkölt galuskával</nev>
+          <ar>4200</ar>
+          <mennyiseg>1</mennyiseg>
+        </etel>
+        <etel>
+          <nev>Somlói galuska</nev>
+          <ar>1800</ar>
+          <mennyiseg>1</mennyiseg>
+        </etel>
+      </etelek>
+      <osszeg>6000</osszeg>
+    </rendeles>
+
+    <rendeles id="R0002">
+      <etteremRef ref="E001"/>
+      <vendegRef ref="V902"/>
+      <etelek>
+        <etel>
+          <nev>Rántott sajt</nev>
+          <ar>2900</ar>
+          <mennyiseg>1</mennyiseg>
+        </etel>
+      </etelek>
+      <osszeg>2900</osszeg>
+    </rendeles>
+  </rendelesLista>
+</vendeglatas>

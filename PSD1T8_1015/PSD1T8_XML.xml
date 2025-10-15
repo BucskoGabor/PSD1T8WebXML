@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PSD1T8_vendeglatas>
+  <etteremek>
+    <etterem ekod="E001">
+      <nev>Aranykanál Étterem</nev>
+      <csillag>5</csillag>
+      <cim>
+        <varos>Budapest</varos>
+        <utca>Fő utca</utca>
+        <hazszam>10</hazszam>
+      </cim>
+      
+      <foszakacs fkod="F01">
+        <nev>Mester János</nev>
+        <eletkor>45</eletkor>
+        <vegzettsegek>
+          <vegzettseg>Mestervizsga</vegzettseg>
+          <vegzettseg>Cukrász oklevél</vegzettseg>
+        </vegzettsegek>
+      </foszakacs>
+      
+      <szakacsok>
+        <szakacs szkod="S01">
+          <nev>Kovács Péter</nev>
+          <reszleg>Melegkonyha</reszleg>
+          <vegzettsegek>
+            <vegzettseg>Szakács képesítés</vegzettseg>
+          </vegzettsegek>
+        </szakacs>
+        <szakacs szkod="S02">
+          <nev>Nagy Éva</nev>
+          <reszleg>Hidegkonyha</reszleg>
+          <vegzettsegek>
+            <vegzettseg>Szakács képesítés</vegzettseg>
+            <vegzettseg>Salátaspecialista</vegzettseg>
+          </vegzettsegek>
+        </szakacs>
+      </szakacsok>
+      
+      <gyakornokok>
+        <gyakornok gykod="G01">
+          <nev>Kiss Anna</nev>
+          <gyakorlat>
+            <kezdete>2025-09-01</kezdete>
+            <idotartama>6 hónap</idotartama>
+          </gyakorlat>
+          <muszakok>
+            <muszak>Délelőtt</muszak>
+            <muszak>Délután</muszak>
+          </muszakok>
+        </gyakornok>
+      </gyakornokok>
+    </etterem>
+
+    <etterem ekod="E002">
+      <nev>Kékfrankos Csárda</nev>
+      <csillag>4</csillag>
+      <cim>
+        <varos>Debrecen</varos>
+        <utca>Rózsa köz</utca>
+        <hazszam>3</hazszam>
+      </cim>
+      <foszakacs fkod="F02">
+        <nev>Szabó Gergely</nev>
+        <eletkor>52</eletkor>
+        <vegzettsegek>
+          <vegzettseg>Mestervizsga</vegzettseg>
+        </vegzettsegek>
+      </foszakacs>
+      <szakacsok>
+        <szakacs szkod="S03">
+          <nev>Tóth Ildikó</nev>
+          <reszleg>Melegkonyha</reszleg>
+          <vegzettsegek>
+            <vegzettseg>Szakács képesítés</vegzettseg>
+          </vegzettsegek>
+        </szakacs>
+      </szakacsok>
+      <gyakornokok/>
+    </etterem>
+  </etteremek>
+
+  <vendegek>
+    <vendeg vkod="V001">
+      <nev>Horváth Zoltán</nev>
+      <eletkor>32</eletkor>
+      <cim>
+        <varos>Budapest</varos>
+        <utca>Mellék utca</utca>
+        <hazszam>21</hazszam>
+      </cim>
+    </vendeg>
+    <vendeg vkod="V002">
+      <nev>Fehér Mária</nev>
+      <eletkor>28</eletkor>
+      <cim>
+        <varos>Debrecen</varos>
+        <utca>Almafa sor</utca>
+        <hazszam>8</hazszam>
+      </cim>
+    </vendeg>
+  </vendegek>
+  
+  <rendelesek>
+    <rendeles etterem_kod="E001" vendeg_kod="V001">
+      <etel>Bécsi szelet</etel>
+      <osszeg>5500 Ft</osszeg>
+    </rendeles>
+    <rendeles etterem_kod="E002" vendeg_kod="V002">
+      <etel>Gulyásleves</etel>
+      <osszeg>3200 Ft</osszeg>
+    </rendeles>
+    <rendeles etterem_kod="E001" vendeg_kod="V002">
+      <etel>Somlói galuska</etel>
+      <osszeg>2500 Ft</osszeg>
+    </rendeles>
+  </rendelesek>
+  
+</PSD1T8_vendeglatas>
