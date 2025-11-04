@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Custom types -->
+    <xs:simpleType name="tanevTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}/\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="egyetemTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PPKE BTK"/>
+            <xs:enumeration value="ELTE IK"/>
+            <xs:enumeration value="BME VIK"/>
+            <xs:enumeration value="DE IK"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idTipus">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9_]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="igenNemTipus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="igen"/>
+            <xs:enumeration value="nem"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Element definitions -->
+    <xs:element name="hnev" type="xs:string"/>
+    <xs:element name="szulev" type="xs:gYear"/>
+    <xs:element name="kurzusnev" type="xs:string"/>
+    <xs:element name="kredit" type="xs:positiveInteger"/>
+    <xs:element name="hely" type="xs:string"/>
+    <xs:element name="oktato" type="xs:string"/>
+    <xs:element name="oraado" type="xs:string"/>
+    
+    <!-- Complex type definitions -->
+    <xs:complexType name="szakType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="evf" type="xs:positiveInteger" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="idopontType">
+        <xs:sequence>
+            <xs:element name="nap" type="napType"/>
+            <xs:element name="tol" type="xs:token"/>
+            <xs:element name="ig" type="xs:token"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="hallgatoType">
+        <xs:sequence>
+            <xs:element ref="hnev"/>
+            <xs:element ref="szulev"/>
+            <xs:element name="szak" type="szakType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kurzusType">
+        <xs:sequence>
+            <xs:element ref="kurzusnev"/>
+            <xs:element ref="kredit"/>
+            <xs:element ref="hely"/>
+            <xs:element name="idopont" type="idopontType"/>
+            <xs:element ref="oktato"/>
+            <xs:element ref="oraado" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="idTipus" use="required"/>
+        <xs:attribute name="jovahagyas" type="igenNemTipus" use="optional"/>
+        <xs:attribute name="nyelv" type="xs:string" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="kurzusokType">
+        <xs:sequence>
+            <xs:element name="kurzus" type="kurzusType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Day of week enumeration -->
+    <xs:simpleType name="napType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Hétfő"/>
+            <xs:enumeration value="Kedd"/>
+            <xs:enumeration value="Szerda"/>
+            <xs:enumeration value="Csütörtök"/>
+            <xs:enumeration value="Péntek"/>
+            <xs:enumeration value="Szombat"/>
+            <xs:enumeration value="Vasárnap"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Root element -->
+    <xs:element name="Neptunkod_kurzusfelvetel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hallgato" type="hallgatoType"/>
+                <xs:element name="kurzusok" type="kurzusokType"/>
+            </xs:sequence>
+            <xs:attribute name="tanév" type="tanevTipus" use="required"/>
+            <xs:attribute name="egyetem" type="egyetemTipus" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
