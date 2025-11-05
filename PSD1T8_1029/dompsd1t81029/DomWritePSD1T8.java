@@ -1,18 +1,22 @@
-package domneptunkod1029;
+package dompsd1t81029;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DomReadNeptunkod1 {
+public class DomWritePSD1T8 {
     public static void main(String[] args) {
         try {
             // XML dokumentum beolvasása
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("orarendPSD1T8.xml");
+            Document document = builder.parse("hallgatoPSD1T8.xml");
             
             // Normalizálás
             document.getDocumentElement().normalize();
@@ -20,8 +24,20 @@ public class DomReadNeptunkod1 {
             System.out.println("Gyökér elem: " + document.getDocumentElement().getNodeName());
             System.out.println("=====================================");
             
-            // Fa struktúra kiírása blokk formában
+            // Fa struktúra kiírása blokk formában a konzolra
             printNodeTree(document.getDocumentElement(), 0);
+            
+            System.out.println("\n=====================================");
+            System.out.println("XML fájl írása folyamatban...");
+            
+            // XML fájl írása
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult("hallgato1PSD1T8.xml");
+            transformer.transform(source, result);
+            
+            System.out.println("Az XML fájl sikeresen kiírva: hallgato1PSD1T8.xml");
             
         } catch (Exception e) {
             e.printStackTrace();

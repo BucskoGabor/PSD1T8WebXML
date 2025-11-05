@@ -1,4 +1,4 @@
-package domneptunkod1029;
+package dompsd1t81029;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -6,7 +6,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DomReadNeptunkod {
+public class DomReadPSD1T8 {
     public static void main(String[] args) {
         try {
             // XML dokumentum beolvasása

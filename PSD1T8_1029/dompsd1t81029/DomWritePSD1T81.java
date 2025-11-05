@@ -1,4 +1,4 @@
-package domneptunkod1029;
+package dompsd1t81029;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -10,13 +10,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DomWriteNeptunkod {
+public class DomWritePSD1T81 {
     public static void main(String[] args) {
         try {
             // XML dokumentum beolvasása
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document document = builder.parse("hallgatoPSD1T8.xml");
+            Document document = builder.parse("orarendPSD1T8.xml");
             
             // Normalizálás
             document.getDocumentElement().normalize();
@@ -34,10 +34,10 @@ public class DomWriteNeptunkod {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult("hallgato1PSD1T8.xml");
+            StreamResult result = new StreamResult("orarend1PSD1T8.xml");
             transformer.transform(source, result);
             
-            System.out.println("Az XML fájl sikeresen kiírva: hallgato1PSD1T8.xml");
+            System.out.println("Az XML fájl sikeresen kiírva: orarend1PSD1T8.xml");
             
         } catch (Exception e) {
             e.printStackTrace();

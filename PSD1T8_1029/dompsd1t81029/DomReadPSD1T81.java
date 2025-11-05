@@ -1,16 +1,12 @@
-package domneptunkod1029;
+package dompsd1t81029;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class DomWriteNeptunkod1 {
+public class DomReadPSD1T81 {
     public static void main(String[] args) {
         try {
             // XML dokumentum beolvasása
@@ -24,20 +20,8 @@ public class DomWriteNeptunkod1 {
             System.out.println("Gyökér elem: " + document.getDocumentElement().getNodeName());
             System.out.println("=====================================");
             
-            // Fa struktúra kiírása blokk formában a konzolra
+            // Fa struktúra kiírása blokk formában
             printNodeTree(document.getDocumentElement(), 0);
-            
-            System.out.println("\n=====================================");
-            System.out.println("XML fájl írása folyamatban...");
-            
-            // XML fájl írása
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult("orarend1PSD1T8.xml");
-            transformer.transform(source, result);
-            
-            System.out.println("Az XML fájl sikeresen kiírva: orarend1PSD1T8.xml");
             
         } catch (Exception e) {
             e.printStackTrace();
