@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orarend>
+    <ora id="01" tipus="gyakorlat">
+        <targy>Webes adatkezelés</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <tol>10:00</tol>
+            <ig>12:00</ig>
+        </idopont>
+        <helyszin>Inf. 101</helyszin>
+        <oktato>Dr. Horváth Béla</oktato>
+    </ora>
+    <ora id="02" tipus="gyakorlat">
+        <targy>Adatbázisok</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>14:00</tol>
+            <ig>16:00</ig>
+        </idopont>
+        <helyszin>Inf. 202</helyszin>
+        <oktato>Nagy Ferenc</oktato>
+    </ora>
+    <ora id="03" tipus="előadás">
+        <targy>Szoftverfejlesztés</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>08:00</tol>
+            <ig>10:00</ig>
+        </idopont>
+        <helyszin>A1. 305</helyszin>
+        <oktato>Dr. Kiss Elemér</oktato>
+    </ora>
+</orarend>
