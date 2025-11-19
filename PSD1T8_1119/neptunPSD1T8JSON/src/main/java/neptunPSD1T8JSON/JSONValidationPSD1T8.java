@@ -19,30 +19,25 @@ public class JSONValidationPSD1T8 {
         System.out.println("======================================");
         
         try {
-            // JSON séma betöltése
             InputStream schemaStream = new FileInputStream("../orarendPSD1T8Schema.json");
             JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance();
             JsonSchema schema = schemaFactory.getSchema(schemaStream);
             
-            // JSON adatok betöltése
             InputStream jsonDataStream = new FileInputStream("../orarendPSD1T8.json");
             JSONObject jsonData = new JSONObject(new JSONTokener(jsonDataStream));
             
             System.out.println("JSON fájl betöltve: orarendPSD1T8.json");
             System.out.println("JSON séma betöltve: orarendPSD1T8Schema.json");
             
-            // JSON adatok konvertálása JsonNode-ra
             ObjectMapper mapper = new ObjectMapper();
             JsonNode jsonNode = mapper.readTree(jsonData.toString());
             
-            // Validáció végrehajtása
             Set<ValidationMessage> validationMessages = schema.validate(jsonNode);
             
             if (validationMessages.isEmpty()) {
                 System.out.println("\n✓ VALIDATION SUCCESSFUL");
                 System.out.println("A JSON dokumentum megfelel a sémának!");
                 
-                // További információk kiíratása
                 validateJsonStructure(jsonData);
                 
             } else {
@@ -67,23 +62,19 @@ public class JSONValidationPSD1T8 {
         System.out.println("------------------------");
         
         try {
-            // Gyökér objektum ellenőrzése
             if (jsonData.has("PSD1T8_orarend")) {
                 System.out.println("✓ Gyökér objektum: PSD1T8_orarend");
                 
                 JSONObject orarend = jsonData.getJSONObject("PSD1T8_orarend");
                 
-                // Órák tömbjének ellenőrzése
                 if (orarend.has("ora")) {
                     org.json.JSONArray orak = orarend.getJSONArray("ora");
                     System.out.println("✓ Órák száma: " + orak.length());
                     
-                    // Minden óra ellenőrzése
                     for (int i = 0; i < orak.length(); i++) {
                         JSONObject ora = orak.getJSONObject(i);
                         System.out.println("\nÓra #" + (i + 1) + " ellenőrzése:");
                         
-                        // Kötelező mezők ellenőrzése
                         String[] requiredFields = {"targy", "idopont", "helyszin", "oktato", "szak"};
                         for (String field : requiredFields) {
                             if (ora.has(field)) {
@@ -93,7 +84,6 @@ public class JSONValidationPSD1T8 {
                             }
                         }
                         
-                        // Időpont objektum ellenőrzése
                         if (ora.has("idopont")) {
                             JSONObject idopont = ora.getJSONObject("idopont");
                             String[] timeFields = {"nap", "tol", "ig"};
