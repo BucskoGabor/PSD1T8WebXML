@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PSD1T8 Órarend Schema",
+  "description": "JSON séma a PSD1T8 órarend struktúrájának validálásához",
+  "type": "object",
+  "properties": {
+    "PSD1T8_orarend": {
+      "type": "object",
+      "description": "A PSD1T8 órarend gyökér objektuma",
+      "properties": {
+        "ora": {
+          "type": "array",
+          "description": "Órák tömbje",
+          "items": {
+            "type": "object",
+            "description": "Egy óra adatai",
+            "required": [
+              "targy",
+              "idopont",
+              "helyszin",
+              "oktato",
+              "szak"
+            ],
+            "properties": {
+              "targy": {
+                "type": "string",
+                "description": "Az óra tantárgya",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "idopont": {
+                "type": "object",
+                "description": "Az óra időpontja",
+                "required": [
+                  "nap",
+                  "tol",
+                  "ig"
+                ],
+                "properties": {
+                  "nap": {
+                    "type": "string",
+                    "description": "A hét napja",
+                    "enum": [
+                      "Hétfő",
+                      "Kedd",
+                      "Szerda",
+                      "Csütörtök",
+                      "Péntek",
+                      "Szombat",
+                      "Vasárnap"
+                    ]
+                  },
+                  "tol": {
+                    "type": "string",
+                    "description": "Kezdési idő",
+                    "pattern": "^[0-9]{4}$",
+                    "minLength": 4,
+                    "maxLength": 4
+                  },
+                  "ig": {
+                    "type": "string",
+                    "description": "Befejezési idő",
+                    "pattern": "^[0-9]{4}$",
+                    "minLength": 4,
+                    "maxLength": 4
+                  }
+                },
+                "additionalProperties": false
+              },
+              "helyszin": {
+                "type": "string",
+                "description": "Az óra helyszíne",
+                "minLength": 1,
+                "maxLength": 50
+              },
+              "oktato": {
+                "type": "string",
+                "description": "Az óra oktatója",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              "szak": {
+                "type": "string",
+                "description": "A szak, ahová az óra tartozik",
+                "minLength": 1,
+                "maxLength": 50
+              }
+            },
+            "additionalProperties": false
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "ora"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "PSD1T8_orarend"
+  ],
+  "additionalProperties": false
+}

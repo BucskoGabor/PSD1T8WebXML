@@ -1,0 +1,138 @@
+{
+  "PSD1T8_orarend": {
+    "ora": [
+      {
+        "targy": "Elektro",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "0800",
+          "ig": "1000"
+        },
+        "helyszin": "III. ea",
+        "oktato": "Szabó Norbert István",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Webtech",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "1000",
+          "ig": "1200"
+        },
+        "helyszin": "V. ea",
+        "oktato": "Agárdi Anita",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Webtech",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "1400",
+          "ig": "1600"
+        },
+        "helyszin": "In/101",
+        "oktato": "Agárdi Anita",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Mobil programozás",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "1600",
+          "ig": "1800"
+        },
+        "helyszin": "In/101",
+        "oktato": "Agárdi Anita",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Mobil programozás",
+        "idopont": {
+          "nap": "Hétfő",
+          "tol": "1800",
+          "ig": "2000"
+        },
+        "helyszin": "In/101",
+        "oktato": "Agárdi Anita",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Mesterséges Intelligencia",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "1000",
+          "ig": "1200"
+        },
+        "helyszin": "XXXII. ea",
+        "oktato": "Kunné Tamás Judit",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Mesterséges Intelligencia",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "1200",
+          "ig": "1400"
+        },
+        "helyszin": "XXXII. ea",
+        "oktato": "Fazekas Levente Áron",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "Elektro",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "1400",
+          "ig": "1600"
+        },
+        "helyszin": "A1/317",
+        "oktato": "Kozsely Gábor",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "UNIX rendszergazda",
+        "idopont": {
+          "nap": "Kedd",
+          "tol": "1700",
+          "ig": "1900"
+        },
+        "helyszin": "In/101",
+        "oktato": "Baksa Attila",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "UNIX rendszergazda",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "0800",
+          "ig": "1000"
+        },
+        "helyszin": "In/103",
+        "oktato": "Baksa Attila",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "XML",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "0800",
+          "ig": "1000"
+        },
+        "helyszin": "In/102",
+        "oktato": "Kovács László",
+        "szak": "Mérnökinformatikus"
+      },
+      {
+        "targy": "XML",
+        "idopont": {
+          "nap": "Szerda",
+          "tol": "1000",
+          "ig": "1200"
+        },
+        "helyszin": "In/101",
+        "oktato": "Bednarik László",
+        "szak": "Mérnökinformatikus"
+      }
+    ]
+  }
+}
