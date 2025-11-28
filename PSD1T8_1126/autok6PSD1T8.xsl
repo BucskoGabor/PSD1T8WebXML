@@ -2,16 +2,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     
-    <xsl:key name="tipus-key" match="auto" use="tipus"/>
+    <xsl:key name="varos-key" match="auto" use="tulaj/varos"/>
     
     <xsl:template match="/">
         <html>
             <head>
-                <title>Autótípusok és példányszámuk</title>
+                <title>Városonkénti autók darabszáma és összára</title>
                 <style>
                     table {
                         border-collapse: collapse;
-                        width: 60%;
+                        width: 70%;
                         margin: 20px auto;
                     }
                     th, td {
@@ -20,7 +20,7 @@
                         text-align: left;
                     }
                     th {
-                        background-color: #9C27B0;
+                        background-color: #FF9800;
                         color: white;
                     }
                     tr:nth-child(even) {
@@ -32,17 +32,18 @@
                 </style>
             </head>
             <body>
-                <h1>Autótípusok és példányaik darabszáma példányszám szerint csökkenő sorrendben</h1>
+                <h1>Városonként mennyi az ottani autók darabszáma és összára</h1>
                 <table>
                     <tr>
-                        <th>Típus</th>
+                        <th>Város</th>
                         <th>Darabszám</th>
+                        <th>Összár</th>
                     </tr>
-                    <xsl:for-each select="autok/auto[generate-id() = generate-id(key('tipus-key', tipus)[1])]">
-                        <xsl:sort select="count(key('tipus-key', tipus))" data-type="number" order="descending"/>
+                    <xsl:for-each select="autok/auto[generate-id() = generate-id(key('varos-key', tulaj/varos)[1])]">
                         <tr>
-                            <td><xsl:value-of select="tipus"/></td>
-                            <td><xsl:value-of select="count(key('tipus-key', tipus))"/></td>
+                            <td><xsl:value-of select="tulaj/varos"/></td>
+                            <td><xsl:value-of select="count(key('varos-key', tulaj/varos))"/></td>
+                            <td><xsl:value-of select="sum(key('varos-key', tulaj/varos)/ar)"/></td>
                         </tr>
                     </xsl:for-each>
                 </table>

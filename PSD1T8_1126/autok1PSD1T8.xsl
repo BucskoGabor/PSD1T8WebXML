@@ -5,27 +5,45 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Autók rendszámai</title>
+                <title>Autók rendszáma és ára</title>
                 <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
+                    table {
+                        border-collapse: collapse;
+                        width: 60%;
+                        margin: 20px auto;
+                    }
+                    th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                        text-align: left;
+                    }
+                    th {
+                        background-color: #2196F3;
+                        color: white;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
                     }
                     h1 {
-                        color: #333;
-                    }
-                    ul {
-                        list-style-type: square;
+                        text-align: center;
                     }
                 </style>
             </head>
             <body>
-                <h1>Autók rendszámai visszaadó listája</h1>
-                <ul>
+                <h1>Autók rendszáma és ára az ár szerinti sorrendben előállító listája</h1>
+                <table>
+                    <tr>
+                        <th>Rendszám</th>
+                        <th>Ár</th>
+                    </tr>
                     <xsl:for-each select="autok/auto">
-                        <li><xsl:value-of select="@rsz"/></li>
+                        <xsl:sort select="ar" data-type="number" order="ascending"/>
+                        <tr>
+                            <td><xsl:value-of select="@rsz"/></td>
+                            <td><xsl:value-of select="ar"/></td>
+                        </tr>
                     </xsl:for-each>
-                </ul>
+                </table>
             </body>
         </html>
     </xsl:template>

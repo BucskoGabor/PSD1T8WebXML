@@ -5,28 +5,27 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Drága autók száma</title>
+                <title>Autók rendszámai</title>
                 <style>
                     body {
                         font-family: Arial, sans-serif;
                         margin: 20px;
-                        text-align: center;
                     }
                     h1 {
                         color: #333;
                     }
-                    .result {
-                        font-size: 24px;
-                        color: #4CAF50;
-                        margin-top: 20px;
+                    ul {
+                        list-style-type: square;
                     }
                 </style>
             </head>
             <body>
-                <h1>Mennyi autó drágább mint 30000?</h1>
-                <div class="result">
-                    <xsl:value-of select="count(autok/auto[ar &gt; 30000])"/> db
-                </div>
+                <h1>Autók rendszámai visszaadó listája</h1>
+                <ul>
+                    <xsl:for-each select="autok/auto">
+                        <li><xsl:value-of select="@rsz"/></li>
+                    </xsl:for-each>
+                </ul>
             </body>
         </html>
     </xsl:template>

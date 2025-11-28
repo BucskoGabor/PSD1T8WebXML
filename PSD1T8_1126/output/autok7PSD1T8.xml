@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>V&aacute;rosonk&eacute;nti aut&oacute;k darabsz&aacute;ma &eacute;s &ouml;ssz&aacute;ra</title>
+        <style>
+                    table {
+                        border-collapse: collapse;
+                        width: 70%;
+                        margin: 20px auto;
+                    }
+                    th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                        text-align: left;
+                    }
+                    th {
+                        background-color: #FF9800;
+                        color: white;
+                    }
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                    h1 {
+                        text-align: center;
+                    }
+                </style>
+    </head>
+    <body>
+        <h1>V&aacute;rosonk&eacute;nt mennyi az ottani aut&oacute;k darabsz&aacute;ma &eacute;s &ouml;ssz&aacute;ra</h1>
+        <table>
+            <tr>
+                <th>V&aacute;ros</th><th>Darabsz&aacute;m</th><th>&Ouml;ssz&aacute;r</th>
+            </tr>
+            <tr>
+                <td>Eger</td><td>1</td><td>21235</td>
+            </tr>
+            <tr>
+                <td>Miskolc</td><td>3</td><td>96799</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -5,7 +5,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Drága autók száma</title>
+                <title>Dokumentum elemszáma</title>
                 <style>
                     body {
                         font-family: Arial, sans-serif;
@@ -17,15 +17,15 @@
                     }
                     .result {
                         font-size: 24px;
-                        color: #4CAF50;
+                        color: #FF5722;
                         margin-top: 20px;
                     }
                 </style>
             </head>
             <body>
-                <h1>Mennyi autó drágább mint 30000?</h1>
+                <h1>Mennyi elemből áll a dokumentum?</h1>
                 <div class="result">
-                    <xsl:value-of select="count(autok/auto[ar &gt; 30000])"/> db
+                    <xsl:value-of select="count(//*)"/> elem
                 </div>
             </body>
         </html>

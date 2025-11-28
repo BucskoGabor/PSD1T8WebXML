@@ -5,28 +5,27 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Dokumentum elemszáma</title>
+                <title>Miskolci tulajdonosok autói</title>
                 <style>
                     body {
                         font-family: Arial, sans-serif;
                         margin: 20px;
-                        text-align: center;
                     }
                     h1 {
                         color: #333;
                     }
-                    .result {
-                        font-size: 24px;
-                        color: #FF5722;
-                        margin-top: 20px;
+                    ul {
+                        list-style-type: circle;
                     }
                 </style>
             </head>
             <body>
-                <h1>Mennyi elemből áll a dokumentum?</h1>
-                <div class="result">
-                    <xsl:value-of select="count(//*)"/> elem
-                </div>
+                <h1>Miskolci tulajdonosok autóinak rendszámait tartalmazó lista</h1>
+                <ul>
+                    <xsl:for-each select="autok/auto[tulaj/varos='Miskolc']">
+                        <li><xsl:value-of select="@rsz"/></li>
+                    </xsl:for-each>
+                </ul>
             </body>
         </html>
     </xsl:template>
