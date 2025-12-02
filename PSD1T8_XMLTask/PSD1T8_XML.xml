@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<konyvtar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="PSD1T8_XMLSchema.xsd">
+    
+    <!-- Szerzők -->
+    <szerzok>
+        <szerzo Szerzo_ID="SZ001">
+            <Nev>Molnár János</Nev>
+            <Szuletesi_datum>1975-03-15</Szuletesi_datum>
+            <Email_cimek>
+                <email>molnar.janos@email.hu</email>
+                <email>janos.molnar@writer.com</email>
+            </Email_cimek>
+        </szerzo>
+        
+        <szerzo Szerzo_ID="SZ002">
+            <Nev>Kovács Anna</Nev>
+            <Szuletesi_datum>1982-07-22</Szuletesi_datum>
+            <Email_cimek>
+                <email>kovacs.anna@email.hu</email>
+            </Email_cimek>
+        </szerzo>
+        
+        <szerzo Szerzo_ID="SZ003">
+            <Nev>Nagy Péter</Nev>
+            <Szuletesi_datum>1968-11-30</Szuletesi_datum>
+            <Email_cimek>
+                <email>nagy.peter@email.hu</email>
+                <email>peter.nagy@literatura.hu</email>
+            </Email_cimek>
+        </szerzo>
+    </szerzok>
+    
+    <!-- Kiadók -->
+    <kiadok>
+        <kiado Kiado_ID="K001">
+            <Nev>Móra Könyvkiadó</Nev>
+            <Cim>
+                <Varos>Budapest</Varos>
+                <Utca>Váci utca 19.</Utca>
+            </Cim>
+            <Kapcsolat>info@mora.hu</Kapcsolat>
+        </kiado>
+        
+        <kiado Kiado_ID="K002">
+            <Nev>Libri Kiadó</Nev>
+            <Cim>
+                <Varos>Budapest</Varos>
+                <Utca>Páva utca 10.</Utca>
+            </Cim>
+            <Kapcsolat>info@libri.hu</Kapcsolat>
+        </kiado>
+        
+        <kiado Kiado_ID="K003">
+            <Nev>Helikon Kiadó</Nev>
+            <Cim>
+                <Varos>Budapest</Varos>
+                <Utca>Nagymező utca 6.</Utca>
+            </Cim>
+            <Kapcsolat>info@helikon.hu</Kapcsolat>
+        </kiado>
+    </kiadok>
+    
+    <!-- Könyvek -->
+    <konyvek>
+        <konyv Konyv_ID="KV001">
+            <Cim>A magyar nyelv története</Cim>
+            <Kiadasi_evi>2018</Kiadasi_evi>
+            <Oldalszam>456</Oldalszam>
+            <Kiado_ref>K001</Kiado_ref>
+            <Szerzok_ref>
+                <szerzo_ref Szerzo_ID="SZ001">
+                    <Szerep>Főszerző</Szerep>
+                </szerzo_ref>
+            </Szerzok_ref>
+        </konyv>
+        
+        <konyv Konyv_ID="KV002">
+            <Cim>Programozási alapok</Cim>
+            <Kiadasi_evi>2020</Kiadasi_evi>
+            <Oldalszam>523</Oldalszam>
+            <Kiado_ref>K002</Kiado_ref>
+            <Szerzok_ref>
+                <szerzo_ref Szerzo_ID="SZ002">
+                    <Szerep>Szerző</Szerep>
+                </szerzo_ref>
+                <szerzo_ref Szerzo_ID="SZ003">
+                    <Szerep>Társszerző</Szerep>
+                </szerzo_ref>
+            </Szerzok_ref>
+        </konyv>
+        
+        <konyv Konyv_ID="KV003">
+            <Cim>Webfejlesztés XML alapokkal</Cim>
+            <Kiadasi_evi>2022</Kiadasi_evi>
+            <Oldalszam>387</Oldalszam>
+            <Kiado_ref>K002</Kiado_ref>
+            <Szerzok_ref>
+                <szerzo_ref Szerzo_ID="SZ002">
+                    <Szerep>Főszerző</Szerep>
+                </szerzo_ref>
+            </Szerzok_ref>
+        </konyv>
+        
+        <konyv Konyv_ID="KV004">
+            <Cim>Adatbázis-kezelés</Cim>
+            <Kiadasi_evi>2019</Kiadasi_evi>
+            <Oldalszam>612</Oldalszam>
+            <Kiado_ref>K003</Kiado_ref>
+            <Szerzok_ref>
+                <szerzo_ref Szerzo_ID="SZ003">
+                    <Szerep>Szerző</Szerep>
+                </szerzo_ref>
+            </Szerzok_ref>
+        </konyv>
+    </konyvek>
+    
+    <!-- Könyvtárosok -->
+    <konyvtarosok>
+        <konyvtaros Konyvtaros_id="KT001">
+            <Nev>Farkas Éva</Nev>
+            <Befosztas>Főkönyvtáros</Befosztas>
+            <Elsosztas>Felnőtt részleg</Elsosztas>
+        </konyvtaros>
+        
+        <konyvtaros Konyvtaros_id="KT002">
+            <Nev>Szabó Gábor</Nev>
+            <Befosztas>Könyvtáros</Befosztas>
+            <Elsosztas>Gyerekkönyvtár</Elsosztas>
+            <Mentor_ref>KT001</Mentor_ref>
+        </konyvtaros>
+        
+        <konyvtaros Konyvtaros_id="KT003">
+            <Nev>Tóth Mária</Nev>
+            <Befosztas>Könyvtáros</Befosztas>
+            <Elsosztas>Kölcsönzési részleg</Elsosztas>
+            <Mentor_ref>KT001</Mentor_ref>
+        </konyvtaros>
+    </konyvtarosok>
+    
+    <!-- Olvasók -->
+    <olvasok>
+        <olvaso Olvaso_ID="O001">
+            <Nev>Kiss Tamás</Nev>
+            <Szuletesi_datum>1990-05-10</Szuletesi_datum>
+            <Telefonszamok>
+                <telefon>+36301234567</telefon>
+                <telefon>+36209876543</telefon>
+            </Telefonszamok>
+            <Regisztracio>
+                <Regisztralt_konyvtaros>KT002</Regisztralt_konyvtaros>
+                <Fizetes>5000</Fizetes>
+            </Regisztracio>
+        </olvaso>
+        
+        <olvaso Olvaso_ID="O002">
+            <Nev>Varga Eszter</Nev>
+            <Szuletesi_datum>1985-12-03</Szuletesi_datum>
+            <Telefonszamok>
+                <telefon>+36307654321</telefon>
+            </Telefonszamok>
+            <Regisztracio>
+                <Regisztralt_konyvtaros>KT001</Regisztralt_konyvtaros>
+                <Fizetes>5000</Fizetes>
+            </Regisztracio>
+        </olvaso>
+        
+        <olvaso Olvaso_ID="O003">
+            <Nev>Horváth László</Nev>
+            <Szuletesi_datum>2000-08-15</Szuletesi_datum>
+            <Telefonszamok>
+                <telefon>+36204567890</telefon>
+            </Telefonszamok>
+            <Regisztracio>
+                <Regisztralt_konyvtaros>KT003</Regisztralt_konyvtaros>
+                <Fizetes>3000</Fizetes>
+            </Regisztracio>
+        </olvaso>
+    </olvasok>
+    
+    <!-- Kölcsönzések -->
+    <kolcsonzesek>
+        <kolcsonzes>
+            <Olvaso_ref>O001</Olvaso_ref>
+            <Konyv_ref>KV001</Konyv_ref>
+            <Kolcsonzes_datuma>2025-11-15</Kolcsonzes_datuma>
+            <Visszahozas_hatarido>2025-12-15</Visszahozas_hatarido>
+            <Visszahozva>false</Visszahozva>
+        </kolcsonzes>
+        
+        <kolcsonzes>
+            <Olvaso_ref>O001</Olvaso_ref>
+            <Konyv_ref>KV003</Konyv_ref>
+            <Kolcsonzes_datuma>2025-11-20</Kolcsonzes_datuma>
+            <Visszahozas_hatarido>2025-12-20</Visszahozas_hatarido>
+            <Visszahozva>false</Visszahozva>
+        </kolcsonzes>
+        
+        <kolcsonzes>
+            <Olvaso_ref>O002</Olvaso_ref>
+            <Konyv_ref>KV002</Konyv_ref>
+            <Kolcsonzes_datuma>2025-10-10</Kolcsonzes_datuma>
+            <Visszahozas_hatarido>2025-11-10</Visszahozas_hatarido>
+            <Visszahozva>true</Visszahozva>
+        </kolcsonzes>
+        
+        <kolcsonzes>
+            <Olvaso_ref>O003</Olvaso_ref>
+            <Konyv_ref>KV004</Konyv_ref>
+            <Kolcsonzes_datuma>2025-11-25</Kolcsonzes_datuma>
+            <Visszahozas_hatarido>2025-12-25</Visszahozas_hatarido>
+            <Visszahozva>false</Visszahozva>
+        </kolcsonzes>
+    </kolcsonzesek>
+    
+</konyvtar>

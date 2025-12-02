@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <!-- Gyökérelem -->
+    <xs:element name="konyvtar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="szerzok" type="szerzokType"/>
+                <xs:element name="kiadok" type="kiadokType"/>
+                <xs:element name="konyvek" type="konyvekType"/>
+                <xs:element name="konyvtarosok" type="konyvtarosokType"/>
+                <xs:element name="olvasok" type="olvasokType"/>
+                <xs:element name="kolcsonzesek" type="kolcsonzesekType"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Kulcsok és hivatkozások -->
+        <!-- Szerző kulcsok -->
+        <xs:key name="szerzoKey">
+            <xs:selector xpath="szerzok/szerzo"/>
+            <xs:field xpath="@Szerzo_ID"/>
+        </xs:key>
+        
+        <!-- Kiadó kulcsok -->
+        <xs:key name="kiadoKey">
+            <xs:selector xpath="kiadok/kiado"/>
+            <xs:field xpath="@Kiado_ID"/>
+        </xs:key>
+        
+        <!-- Könyv kulcsok -->
+        <xs:key name="konyvKey">
+            <xs:selector xpath="konyvek/konyv"/>
+            <xs:field xpath="@Konyv_ID"/>
+        </xs:key>
+        
+        <!-- Könyvtáros kulcsok -->
+        <xs:key name="konyvtarosKey">
+            <xs:selector xpath="konyvtarosok/konyvtaros"/>
+            <xs:field xpath="@Konyvtaros_id"/>
+        </xs:key>
+        
+        <!-- Olvasó kulcsok -->
+        <xs:key name="olvasoKey">
+            <xs:selector xpath="olvasok/olvaso"/>
+            <xs:field xpath="@Olvaso_ID"/>
+        </xs:key>
+        
+        <!-- Hivatkozások -->
+        <xs:keyref name="konyvSzerzoRef" refer="szerzoKey">
+            <xs:selector xpath="konyvek/konyv/Szerzok_ref/szerzo_ref"/>
+            <xs:field xpath="@Szerzo_ID"/>
+        </xs:keyref>
+        
+        <xs:keyref name="konyvKiadoRef" refer="kiadoKey">
+            <xs:selector xpath="konyvek/konyv"/>
+            <xs:field xpath="Kiado_ref"/>
+        </xs:keyref>
+        
+        <xs:keyref name="mentorRef" refer="konyvtarosKey">
+            <xs:selector xpath="konyvtarosok/konyvtaros"/>
+            <xs:field xpath="Mentor_ref"/>
+        </xs:keyref>
+        
+        <xs:keyref name="regisztracioKonyvtarosRef" refer="konyvtarosKey">
+            <xs:selector xpath="olvasok/olvaso/Regisztracio"/>
+            <xs:field xpath="Regisztralt_konyvtaros"/>
+        </xs:keyref>
+        
+        <xs:keyref name="kolcsonzesOlvasoRef" refer="olvasoKey">
+            <xs:selector xpath="kolcsonzesek/kolcsonzes"/>
+            <xs:field xpath="Olvaso_ref"/>
+        </xs:keyref>
+        
+        <xs:keyref name="kolcsonzesKonyvRef" refer="konyvKey">
+            <xs:selector xpath="kolcsonzesek/kolcsonzes"/>
+            <xs:field xpath="Konyv_ref"/>
+        </xs:keyref>
+    </xs:element>
+    
+    <!-- Szerzők típusok -->
+    <xs:complexType name="szerzokType">
+        <xs:sequence>
+            <xs:element name="szerzo" type="szerzoType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="szerzoType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Szuletesi_datum" type="xs:date"/>
+            <xs:element name="Email_cimek">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="email" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Szerzo_ID" type="xs:ID" use="required"/>
+    </xs:complexType>
+    
+    <!-- Kiadók típusok -->
+    <xs:complexType name="kiadokType">
+        <xs:sequence>
+            <xs:element name="kiado" type="kiadoType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kiadoType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Cim">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Varos" type="xs:string"/>
+                        <xs:element name="Utca" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Kapcsolat" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="Kiado_ID" type="xs:ID" use="required"/>
+    </xs:complexType>
+    
+    <!-- Könyvek típusok -->
+    <xs:complexType name="konyvekType">
+        <xs:sequence>
+            <xs:element name="konyv" type="konyvType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="konyvType">
+        <xs:sequence>
+            <xs:element name="Cim" type="xs:string"/>
+            <xs:element name="Kiadasi_evi" type="xs:gYear"/>
+            <xs:element name="Oldalszam" type="xs:positiveInteger"/>
+            <xs:element name="Kiado_ref" type="xs:IDREF"/>
+            <xs:element name="Szerzok_ref">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="szerzo_ref" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Szerep" type="xs:string"/>
+                                </xs:sequence>
+                                <xs:attribute name="Szerzo_ID" type="xs:IDREF" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Konyv_ID" type="xs:ID" use="required"/>
+    </xs:complexType>
+    
+    <!-- Könyvtárosok típusok -->
+    <xs:complexType name="konyvtarosokType">
+        <xs:sequence>
+            <xs:element name="konyvtaros" type="konyvtarosType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="konyvtarosType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Befosztas" type="xs:string"/>
+            <xs:element name="Elsosztas" type="xs:string"/>
+            <xs:element name="Mentor_ref" type="xs:IDREF" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Konyvtaros_id" type="xs:ID" use="required"/>
+    </xs:complexType>
+    
+    <!-- Olvasók típusok -->
+    <xs:complexType name="olvasokType">
+        <xs:sequence>
+            <xs:element name="olvaso" type="olvasoType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="olvasoType">
+        <xs:sequence>
+            <xs:element name="Nev" type="xs:string"/>
+            <xs:element name="Szuletesi_datum" type="xs:date"/>
+            <xs:element name="Telefonszamok">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="telefon" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Regisztracio">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Regisztralt_konyvtaros" type="xs:IDREF"/>
+                        <xs:element name="Fizetes" type="xs:positiveInteger"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Olvaso_ID" type="xs:ID" use="required"/>
+    </xs:complexType>
+    
+    <!-- Kölcsönzések típusok -->
+    <xs:complexType name="kolcsonzesekType">
+        <xs:sequence>
+            <xs:element name="kolcsonzes" type="kolcsonzesType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kolcsonzesType">
+        <xs:sequence>
+            <xs:element name="Olvaso_ref" type="xs:IDREF"/>
+            <xs:element name="Konyv_ref" type="xs:IDREF"/>
+            <xs:element name="Kolcsonzes_datuma" type="xs:date"/>
+            <xs:element name="Visszahozas_hatarido" type="xs:date"/>
+            <xs:element name="Visszahozva" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
