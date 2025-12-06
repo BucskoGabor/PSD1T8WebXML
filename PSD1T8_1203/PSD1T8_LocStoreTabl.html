@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNKÓD Órarend Táblázat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>NEPTUNKÓD Órarend JSON</h1>
+
+        <div class="form-section">
+            <h2>Fájl kiválasztása / órarend json</h2>
+            <div class="file-controls">
+                <label for="jsonFileTable" class="btn btn-info">Fájl kiválasztása</label>
+                <input type="file" id="jsonFileTable" accept=".json" style="display: none;">
+                <button id="loadStorageBtnTable" class="btn btn-success">LocalStorage betöltése</button>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2>Órarend táblázat</h2>
+            <table id="timetableTable">
+                <thead>
+                    <tr>
+                        <th>Tárgy</th>
+                        <th>Nap</th>
+                        <th>Tól</th>
+                        <th>Ig</th>
+                        <th>Helyszín</th>
+                        <th>Oktató</th>
+                        <th>Szak</th>
+                    </tr>
+                </thead>
+                <tbody id="timetableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="PSD1T8_LocStoreTabl.js"></script>
+</body>
+
+</html>

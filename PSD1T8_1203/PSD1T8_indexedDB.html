@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNKÓD IndexedDB - Tulajdonos & Autó</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>NEPTUNKÓD IndexedDB - Tulajdonos & Autó</h1>
+
+        <div class="two-column-layout">
+            <!-- Tulajdonos Section -->
+            <div class="column">
+                <div class="form-section">
+                    <h2>Tulajdonos</h2>
+                    <form id="ownerForm">
+                        <div class="form-group">
+                            <label for="ownerNev">Név:</label>
+                            <input type="text" id="ownerNev" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ownerCim">Cím:</label>
+                            <input type="text" id="ownerCim" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ownerTelefon">Telefon:</label>
+                            <input type="tel" id="ownerTelefon" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Új adatsor hozzáadása</button>
+                    </form>
+                </div>
+
+                <div class="search-section">
+                    <h2>Keresés</h2>
+                    <input type="text" id="ownerSearch" placeholder="Név">
+                </div>
+
+                <div class="display-section">
+                    <h2>Összes tulajdonos</h2>
+                    <div id="ownersList" class="items-list">
+                        <p>Nincs megjeleníthető tulajdonos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autó Section -->
+            <div class="column">
+                <div class="form-section">
+                    <h2>Autó</h2>
+                    <form id="carForm">
+                        <div class="form-group">
+                            <label for="carRendszam">Rendszám:</label>
+                            <input type="text" id="carRendszam" required placeholder="ABC-123">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carTipus">Típus:</label>
+                            <input type="text" id="carTipus" required placeholder="Toyota">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carSzin">Szín:</label>
+                            <input type="text" id="carSzin" required placeholder="Kék">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carKor">Kor:</label>
+                            <input type="number" id="carKor" min="0" required placeholder="5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carAr">Ár:</label>
+                            <input type="number" id="carAr" min="0" required placeholder="2000000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="carTulaj">Tulajdonos:</label>
+                            <select id="carTulaj" required>
+                                <option value="">Válassz tulajdonost</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Autó hozzáadása</button>
+                    </form>
+                </div>
+
+                <div class="search-section">
+                    <h2>Keresés</h2>
+                    <input type="text" id="carSearch" placeholder="Keresés autók között">
+                </div>
+
+                <div class="search-section">
+                    <h2>Szűrés</h2>
+                    <select id="carFilter">
+                        <option value="">Összes tulajdonos</option>
+                    </select>
+                </div>
+
+                <div class="display-section">
+                    <h2>Autók listája</h2>
+                    <div id="carsList" class="items-list">
+                        <p>Nincs megjeleníthető autó.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export/Import Section -->
+        <div class="export-section">
+            <h2>Adatok mentése és betöltése</h2>
+            <p>Az export minden tulajdonost és autót egy JSON fájlba ment. Az import betölti a fájl tartalmát és
+                felülírja a jelenlegi adatokat.</p>
+            <div class="export-controls">
+                <button id="exportAllBtn" class="btn btn-success">Exportálás JSON fájlba</button>
+                <div class="import-controls">
+                    <label for="importAllFile" class="btn btn-info">Importálás JSON-ből</label>
+                    <input type="file" id="importAllFile" accept=".json" style="display: none;">
+                    <label>
+                        <input type="checkbox" id="clearBeforeImportAll"> Nincs fájl kiválasztva
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="PSD1T8_indexedDB.js"></script>
+</body>
+
+</html>

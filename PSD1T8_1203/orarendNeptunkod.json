@@ -1,0 +1,38 @@
+[
+    {
+        "targy": "Szoftvertesztelés",
+        "nap": "hétfő",
+        "tol": 10,
+        "ig": 12,
+        "helyszin": "Inf. 103",
+        "oktato": "Dr. XY",
+        "szak": "PTI"
+    },
+    {
+        "targy": "Szoftvertesztelés",
+        "nap": "szerda",
+        "tol": 12,
+        "ig": 14,
+        "helyszin": "Inf. 103",
+        "oktato": "Dr. XY",
+        "szak": "PTI"
+    },
+    {
+        "targy": "Webes adatkezelő környezetek",
+        "nap": "kedd",
+        "tol": 14,
+        "ig": 16,
+        "helyszin": "Inf. 205",
+        "oktato": "Dr. AB",
+        "szak": "PTI"
+    },
+    {
+        "targy": "Adatbázisok",
+        "nap": "csütörtök",
+        "tol": 8,
+        "ig": 10,
+        "helyszin": "Inf. 101",
+        "oktato": "Dr. CD",
+        "szak": "PTI"
+    }
+]

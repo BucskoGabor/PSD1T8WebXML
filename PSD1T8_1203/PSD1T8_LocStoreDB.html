@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNKÓD Hallgatók</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NEPTUNKÓD Hallgatók</h1>
+        
+        <div class="form-section">
+            <h2>Új hallgató hozzáadása</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="nev">Név:</label>
+                    <input type="text" id="nev" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="evfolyam">Évfolyam:</label>
+                    <input type="number" id="evfolyam" min="1" max="6" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="szak">Szak:</label>
+                    <input type="text" id="szak" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="p@ptl.hu">
+                </div>
+                
+                <div class="form-group">
+                    <label for="neptun">NEPTUN kód:</label>
+                    <input type="text" id="neptun" maxlength="6" pattern="[A-Z0-9]{6}" placeholder="PSD1T8">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Mentés</button>
+            </form>
+        </div>
+
+        <div class="search-section">
+            <h2>Keresés:</h2>
+            <input type="text" id="searchInput" placeholder="Keresés...">
+        </div>
+
+        <div class="render-section">
+            <h2>Rendezés:</h2>
+            <select id="sortSelect">
+                <option value="">Nincs rendezés</option>
+                <option value="nev">Név</option>
+                <option value="evfolyam">Évfolyam</option>
+                <option value="szak">Szak</option>
+                <option value="neptun">NEPTUN kód</option>
+            </select>
+        </div>
+
+        <div class="export-section">
+            <h2>Export / Import JSON</h2>
+            <button id="exportBtn" class="btn btn-success">Export JSON</button>
+            <div class="import-controls">
+                <label for="importFile" class="btn btn-info">Import JSON</label>
+                <input type="file" id="importFile" accept=".json" style="display: none;">
+                <label>
+                    <input type="checkbox" id="clearBeforeImport"> Nincs töj kivánalása
+                </label>
+            </div>
+        </div>
+
+        <div class="table-section">
+            <h2>Hallgatók listája</h2>
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Évfolyam</th>
+                        <th>Szak</th>
+                        <th>Email</th>
+                        <th>NEPTUN</th>
+                        <th>Műveletek</th>
+                    </tr>
+                </thead>
+                <tbody id="studentsBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="PSD1T8_LocStoreDB.js"></script>
+</body>
+</html>

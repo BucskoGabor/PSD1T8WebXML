@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPTUNKÓD Órarend JSON</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>NEPTUNKÓD Órarend JSON</h1>
+
+        <div class="form-section">
+            <h2>Fájl kiválasztása / órarend json</h2>
+            <div class="file-controls">
+                <label for="jsonFile" class="btn btn-info">Fájl kiválasztása</label>
+                <input type="file" id="jsonFile" accept=".json" style="display: none;">
+                <button id="loadStorageBtn" class="btn btn-success">LocalStorage betöltése</button>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <h2>Keresés tárgy szerint:</h2>
+            <input type="text" id="searchInput" placeholder="Pl.: XML">
+        </div>
+
+        <div class="display-section">
+            <h2>Szoftvertesztelés</h2>
+            <div id="courseDetails" class="course-card">
+                <p><strong>Nap:</strong> <span id="detailNap">-</span></p>
+                <p><strong>Tól:</strong> <span id="detailTol">-</span></p>
+                <p><strong>Ig:</strong> <span id="detailIg">-</span></p>
+                <p><strong>Helyszín:</strong> <span id="detailHelyszin">-</span></p>
+                <p><strong>Oktató:</strong> <span id="detailOktato">-</span></p>
+                <p><strong>Szak:</strong> <span id="detailSzak">-</span></p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prevBtn" class="btn btn-warning">← Előző</button>
+            <button id="nextBtn" class="btn btn-warning">Következő →</button>
+        </div>
+    </div>
+
+    <script src="PSD1T8_LocStoreList.js"></script>
+</body>
+
+</html>
