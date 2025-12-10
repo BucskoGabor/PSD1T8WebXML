@@ -75,6 +75,37 @@
             <xs:selector xpath="kolcsonzesek/kolcsonzes"/>
             <xs:field xpath="Konyv_ref"/>
         </xs:keyref>
+        
+        <!-- Unique korlátozások -->
+        <!-- Szerző nevek egyedisége -->
+        <xs:unique name="uniqueSzerzoNev">
+            <xs:selector xpath="szerzok/szerzo"/>
+            <xs:field xpath="Nev"/>
+        </xs:unique>
+        
+        <!-- Kiadó nevek egyedisége -->
+        <xs:unique name="uniqueKiadoNev">
+            <xs:selector xpath="kiadok/kiado"/>
+            <xs:field xpath="Nev"/>
+        </xs:unique>
+        
+        <!-- Könyv címek egyedisége -->
+        <xs:unique name="uniqueKonyvCim">
+            <xs:selector xpath="konyvek/konyv"/>
+            <xs:field xpath="Cim"/>
+        </xs:unique>
+        
+        <!-- Könyvtáros nevek egyedisége -->
+        <xs:unique name="uniqueKonyvtarosNev">
+            <xs:selector xpath="konyvtarosok/konyvtaros"/>
+            <xs:field xpath="Nev"/>
+        </xs:unique>
+        
+        <!-- Olvasó nevek egyedisége -->
+        <xs:unique name="uniqueOlvasoNev">
+            <xs:selector xpath="olvasok/olvaso"/>
+            <xs:field xpath="Nev"/>
+        </xs:unique>
     </xs:element>
     
     <!-- Szerzők típusok -->
